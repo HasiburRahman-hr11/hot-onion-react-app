@@ -1,0 +1,23 @@
+
+.foods_tabs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.foods_tabs_item{
+    margin: 0 10px;
+    border-bottom: 2px solid transparent;
+    font-weight: 500;
+    cursor: pointer;
+}
+.foods_tabs_item.react-tabs__tab--selected{
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.food{
+    transition: all 0.3s ease;
+}
+.food:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
