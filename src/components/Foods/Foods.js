@@ -78,7 +78,7 @@ const Foods = () => {
                 </Tabs>
 
                 <Box component="div" sx={{textAlign:'center' , marginTop:'50px'}}>
-                    <button className="btn btn_secondary">Checkout Your Food</button>
+                    <button className="btn btn_primary">Checkout Your Food</button>
                 </Box>
             </Container>
 
