@@ -158,6 +158,12 @@ button {
   justify-content: center;
 }
 
+.form_error{
+  color: #f83030;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
 /* Checkout */
 .order_review_wrapper p {
   font-size: 15px;

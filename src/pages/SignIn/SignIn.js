@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import { Link, useLocation , useHistory } from 'react-router-dom';
+import CircularProgress from '@mui/material/CircularProgress';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import GoogleIcon from '@mui/icons-material/Google';
 import useAuth from '../../hooks/useAuth';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const SignIn = () => {
-    const { googleSignIn, setError } = useAuth();
+    const { googleSignIn, setUser , setError , error } = useAuth();
     const location = useLocation();
     const history = useHistory();
 
+    const [loading, setLoading] = useState(false);
+
+    const [formData, setFormData] = useState({
+        email: '',
+        password: '',
+    });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    }
 
     const handleGoogleSignIn = () => {
         googleSignIn()
@@ -21,6 +33,23 @@ const SignIn = () => {
                 setError(error);
             })
     }
+
+    const handleSignIn = (e) => {
+        e.preventDefault();
+        setLoading(true)
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, formData.email, formData.password)
+            .then((result) => {
+                const user = result.user;
+                setUser(user)
+                setLoading(false)
+            })
+            .catch((error) => {
+                setError(error)
+                setLoading(false)
+            });
+    }
+
     return (
         <Box component="div" className="signin"
             sx={{
@@ -34,18 +63,41 @@ const SignIn = () => {
                     maxWidth: '370px',
                     margin: '0 auto'
                 }}>
-                    <form action="">
+                    <form action="" onSubmit={handleSignIn}>
                         <Box component="div" className="input_group">
-                            <Box component="input" type="email" placeholder="Email" name="email" required />
+                            <Box
+                                component="input"
+                                type="email"
+                                placeholder="Email"
+                                name="email"
+                                required
+                                value={formData.email}
+                                onChange={handleChange}
+                            />
                         </Box>
                         <Box component="div" className="input_group">
-                            <Box component="input" type="password" placeholder="Password" name="password" required />
+                            <Box
+                                component="input"
+                                type="password"
+                                placeholder="Password"
+                                name="password"
+                                required
+                                value={formData.password}
+                                onChange={handleChange}
+                            />
                         </Box>
 
 
                         <Box component="div" className="input_group">
-                            <Box component="button" type="submit" className="btn btn_primary">Sign In</Box>
+                            <Box component="button" type="submit" className="btn btn_primary">
+                                {loading ? <CircularProgress sx={{
+                                    color: '#fff',
+                                    width: '25px !important',
+                                    height: '25px !important'
+                                }} /> : 'Sign In'}
+                            </Box>
                         </Box>
+                        {error.message && <p className="form_error" style={{textAlign:'center'}}>Wrong email or password provided!</p>}
                     </form>
 
 
