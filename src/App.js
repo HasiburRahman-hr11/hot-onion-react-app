@@ -14,14 +14,15 @@ import PageScroller from './components/PageScroller/PageScroller';
 import PrivateRoute from './utils/PrivateRoute';
 import useAuth from './hooks/useAuth';
 import Loading from './components/Loading/Loading';
+import NotFound from './pages/NotFound/NotFound';
 
 const App = () => {
 
-  const { user , loading } = useAuth();
+  const { user, loading } = useAuth();
 
   return (
     <Router>
-      {loading && <Loading/>}
+      {loading && <Loading />}
       <Header />
       <ToastContainer />
       <PageScroller />
@@ -39,7 +40,6 @@ const App = () => {
           <OrderComplete />
         </PrivateRoute>
 
-
         <Route path="/signup">
           {!user.email && !user.displayName
             ? (<SignUp />)
@@ -49,6 +49,10 @@ const App = () => {
           {!user.email && !user.displayName
             ? (<SignIn />)
             : (<Redirect to="/checkout" />)}
+        </Route>
+
+        <Route path="*">
+          <NotFound />
         </Route>
 
       </Switch>
