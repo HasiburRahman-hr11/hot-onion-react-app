@@ -5,7 +5,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const ChooseItem = ({ item }) => {
     return (
-        <Box component="div">
+        <Box component="div" className="chooseUs_item">
             <Box component="img" src={item.thumbnail} alt={item.title} />
             <Grid container spacing={2} sx={{ marginTop: '15px' }}>
                 <Grid

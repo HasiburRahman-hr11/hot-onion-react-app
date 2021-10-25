@@ -30,7 +30,7 @@ const Banner = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    minHeight: { lg: '400px' }
+                    minHeight: { lg: '500px' }
                 }}
             >
                 <Box component="div" sx={{

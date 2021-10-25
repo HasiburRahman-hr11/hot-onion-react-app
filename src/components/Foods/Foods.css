@@ -6,14 +6,19 @@
     margin-bottom: 50px;
 }
 .foods_tabs_item{
-    margin: 0 10px;
-    border-bottom: 2px solid transparent;
+    margin: 0 5px;
+    /* border-bottom: 2px solid transparent; */
     font-weight: 500;
     cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 20px;
 }
-.foods_tabs_item.react-tabs__tab--selected{
-    color: var(--primary-color);
-    border-color: var(--primary-color);
+.foods_tabs_item.react-tabs__tab--selected,
+.foods_tabs_item:hover{
+    /* color: var(--primary-color);
+    border-color: var(--primary-color); */
+    background-color: var(--primary-color);
+    color: #fff;
 }
 .food{
     transition: all 0.3s ease;

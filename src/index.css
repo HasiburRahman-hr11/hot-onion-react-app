@@ -122,6 +122,13 @@ button {
   right: -20px;
 }
 
+.chooseUs_item{
+  padding: 20px 20px;
+  border-radius: 20px;
+}
+.chooseUs_item:hover{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
 /* Sign Up - Sign In */
 .input_group {
   margin-bottom: 15px;

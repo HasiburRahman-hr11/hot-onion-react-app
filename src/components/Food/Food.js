@@ -6,7 +6,13 @@ const Food = ({ food }) => {
     return (
         <Box component="div"
             className="food"
-            sx={{ backgroundColor: '#fff', padding: '15px 20px', textAlign: 'center', borderRadius: '5px' }}
+            sx={{ 
+                backgroundColor: '#fff', 
+                padding: '20px 20px', 
+                textAlign: 'center', 
+                borderRadius: '5px' ,
+                paddingBottom:'30px'
+            }}
         >
             <Box component="div" sx={{ marginBottom: '20px', padding: { sm: '0 30px', xs: '0 15px' } }}>
                 <Link to={`/foods/${food._id}`}>
@@ -30,6 +36,11 @@ const Food = ({ food }) => {
                 </Box>
                 <Box component="h2" sx={{ fontWeight: '500', fontSize: '20px' }}>
                     ${food.price}
+                </Box>
+                <Box component="div" sx={{
+                    marginTop:'20px'
+                    }}>
+                    <Link to={`/foods/${food._id}`} className="btn btn_primary btn_rounded">Order Now</Link>
                 </Box>
             </Box>
         </Box>

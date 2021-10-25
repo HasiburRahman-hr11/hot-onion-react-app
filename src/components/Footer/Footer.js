@@ -73,9 +73,7 @@ const Footer = () => {
                 </Box>
                 <Box component="div" className="footer_bottom" sx={{marginTop:'60px'}}>
                     <Grid container spacing={4}>
-                        <Grid item sm={6} xs={12}>
-                            <Box component="p" sx={{ fontSize: '12px', color: '#696969' }}>Copyright &copy; {new Date().getFullYear()} Online food</Box>
-                        </Grid>
+                       
                         <Grid item sm={6} xs={12}>
                             <Box component="ul" className="footer_list footer_bottom_list"
                                 sx={{
@@ -94,6 +92,9 @@ const Footer = () => {
                                     <Link to="#">Pricing</Link>
                                 </Box>
                             </Box>
+                        </Grid>
+                        <Grid item sm={6} xs={12}>
+                            <Box component="p" sx={{ fontSize: '12px', color: '#696969' }}>Copyright &copy; {new Date().getFullYear()} Online food</Box>
                         </Grid>
                     </Grid>
                 </Box>

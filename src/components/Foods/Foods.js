@@ -6,6 +6,7 @@ import Container from '@mui/material/Container';
 import { foods } from '../../fakedata';
 import Food from '../Food/Food';
 import './Foods.css';
+import { Link } from 'react-router-dom';
 
 const Foods = () => {
     return (
@@ -78,7 +79,7 @@ const Foods = () => {
                 </Tabs>
 
                 <Box component="div" sx={{textAlign:'center' , marginTop:'50px'}}>
-                    <button className="btn btn_primary">Checkout Your Food</button>
+                    <Link to="/checkout" className="btn btn_primary">Checkout Your Food</Link>
                 </Box>
             </Container>
 
