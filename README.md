@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Red Onion | React App
 
 This is a simple food website created with React Js.
 Live website link is [here](https://red-onion-react-app.netlify.app).
