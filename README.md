@@ -7,4 +7,5 @@ Live website link is [here](https://red-onion-react-app.netlify.app).
 * **React Js**
 * **React Router Dom**
 * **Material UI**
+* **Firebase Authentication**
 
